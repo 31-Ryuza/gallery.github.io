@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Supercar</h1>
+    <div class="container">
+        <ul class="gallery">
+            <li>
+                <a href="#gambar-1">
+                    <img src="img/thumbs/1.jpeg" width="120" alt="1">
+                    <span>Nissan Skyline</span>
+                </a>
+                <div class="overlay" id="gambar-1">
+                    <a href="#" class="close">X</a>
+                    <a href="#gambar-4" class="balik"></a>
+                    <img src="img/full/1.jpeg" alt="Skyline">
+                    <a href="#gambar-2" class="geser"></a>
+                </div>
+            </li>
+            <li>
+                <a href="#gambar-2">
+                    <img src="img/thumbs/2.jpeg" width="120" alt="1">
+                    <span>Nissan GTR</span>
+                </a>
+                <div class="overlay" id="gambar-2">
+                    <a href="#" class="close">X</a>
+                    <a href="#gambar-1" class="balik"></a>
+                    <img src="img/full/2.jpeg" alt="GTR">
+                    <a href="#gambar-3" class="geser"></a>
+                </div>
+            </li>
+            <li>
+                <a href="#gambar-3">
+                    <img src="img/thumbs/6.jpeg" width="120" alt="1">
+                    <span>Nissan Silvia</span>
+                </a>
+                <div class="overlay" id="gambar-3">
+                    <a href="#" class="close">X</a>
+                    <a href="#gambar-2" class="balik"></a>
+                    <img src="img/full/6.jpeg" alt="Silvia">
+                    <a href="#gambar-4" class="geser"></a>
+                </div>
+            </li>
+            <li>
+                <a href="#gambar-4">
+                    <img src="img/thumbs/8.jpeg" width="120" alt="1">
+                    <span>Toyota Supra</span>
+                </a>
+                <div class="overlay" id="gambar-4">
+                    <a href="#" class="close">X</a>
+                    <a href="#gambar-3" class="balik"></a>
+                    <img src="img/full/8.jpeg" alt="Supra">
+                    <a href="#gambar-1" class="geser"></a>
+                </div>
+            </li>
+            <div class="clear">
+
+            </div>
+        </ul>
+    </div>
+    
+</body>
+<style>
+    .geser{
+        width: 48px;
+        height: 48px;
+        background-image: url(img/kanan1.png);
+        position: absolute;
+        text-indent: -9999px;
+        top: 45%;
+        margin-left: 50px;
+        transition: 0.5s;
+        opacity: 0;
+    }
+    .geser:hover{
+        border-radius: 50%;
+        background-color: #320074;
+    }
+    .balik{
+        width: 48px;
+        height: 48px;
+        background-image: url(img/kiri1.png);
+        position: absolute;
+        text-indent: -9999px;
+        top: 45%;
+        margin-left: -100px;
+        transition: .5s;
+        opacity: 0;
+    }
+    .balik:hover{
+        border-radius: 50%;
+        background-color: #320074;
+    }
+    .overlay:target .geser{
+        animation: tombolnext 1s .5s forwards;
+    }
+    .overlay:target .balik{
+        animation: tombolnext 1s .5s forwards;
+    }
+    .overlay img{
+        transition: 1s;
+        cursor: pointer;
+        overflow: hidden;
+    }
+    .overlay img:hover{
+        transform: scale(1.2);
+    }
+    @keyframes tombolnext{
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+</html>
